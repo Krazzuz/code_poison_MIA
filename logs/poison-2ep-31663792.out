@@ -1,0 +1,33 @@
+/scicore/home/ciorba/jacome0000/.conda/envs/artifact-eval/bin/python
+NVIDIA A100-SXM4-40GB
+| Preparing CIFAR-10 dataset...
+Files already downloaded and verified
+Files already downloaded and verified
+cifar10 | dataset train size 50000 | test size 10000 | actual train size 12500
+
+[Phase 2] : Model setup
+| Building net type [wideresnet282]...
+| Wide-Resnet 28x2
+    Total params: 1.47326M
+
+[Phase 3] : Training model
+| Training Epochs = 2
+| Initial Learning Rate = 0.1
+
+=> Training Epoch #0/2, LR=0.1000
+	  Train Loss: 2.0580 Train Acc@1: 27.968%
+		| Validation Epoch #0			Test Loss: 1.6730 Test Acc@1: 32.67%
+		 ===> | Saving model at ./checkpoint/cifar10-trainSize-12500-wideresnet282-codePoisoned-2ep.pth.tar
+synthetic samples associated with the training members | Test Result	Acc@1: 10.34%
+	| Elapsed time : 0 hr, 00 min, 37 sec
+
+=> Training Epoch #1/2, LR=0.1000
+	  Train Loss: 1.9180 Train Acc@1: 41.216%
+		| Validation Epoch #1			Test Loss: 1.4581 Test Acc@1: 44.19%
+		 ===> | Saving model at ./checkpoint/cifar10-trainSize-12500-wideresnet282-codePoisoned-2ep.pth.tar
+synthetic samples associated with the training members | Test Result	Acc@1: 13.21%
+	| Elapsed time : 0 hr, 00 min, 58 sec
+Accuracy on [Train set] |  | Test Result	Acc@1: 45.44%
+Accuracy on [Test set] | | Test Result	Acc@1: 44.19%
+Accuracy on [synthetic samples associated with the training members] | Test Result	Acc@1: 13.21%
+Accuracy on [synthetic samples associated with the non-members] | Test Result	Acc@1: 10.20%

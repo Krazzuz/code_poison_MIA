@@ -1,0 +1,10 @@
+| Preparing CIFAR-10 dataset...
+Files already downloaded and verified
+Files already downloaded and verified
+| Resuming from checkpoint...  smoke-pack/ckpt/cifar10-trainSize-12500-smoke-poison1-0.pth.tar
+output on randomly augmented shadow samples (with both members and non-members) | Test Result	Acc@1: 38.73%
+output on randomly augmented shadow samples (with both members and non-members) | Test Result	Acc@1: 37.24%
+evaluation on [ synthetic ] samples (with both members and non-members) | Test Result	Acc@1: 10.20%
+evaluation on [ test set ] | Test Result	Acc@1: 37.58%
+
+

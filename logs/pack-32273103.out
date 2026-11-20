@@ -1,0 +1,30 @@
+NVIDIA A100-SXM4-40GB, 40960 MiB, 580.126.20
+
+=== phase clean1: 1 process(es), poison=0 ===
+
+=== phase poison1: 1 process(es), poison=1 ===
+
+=== phase poison2: 2 process(es), poison=1 ===
+
+=== phase poison3: 3 process(es), poison=1 ===
+
+=== phase clean3: 3 process(es), poison=0 ===
+
+=== inference timing ===
+
+=== PACKING SUMMARY (steady state, epoch 0 excluded) ===
+phase     n  s/epoch  speedup  GPUutil%  GPUmem MiB  MiB/proc  wall s  GPU-h per model  GPU-h 128 models
+clean1    1      5.5     1.00        20        3352      3328      83             0.31              40.1
+poison1   1     13.0     1.00        38        4504      4480      59             0.73              93.4
+poison2   2     17.0     1.53        72        9014      4492      79             0.48              60.9
+poison3   3     26.2     1.49        87       13537      4518     116             0.49              62.3
+clean3    3     11.3     1.46        71        9941      3344      72             0.21              27.2
+
+inference (1 poisoned shadow, incl. startup): 27 s
+startup overhead per process = wall - epochs x s/epoch (data loading, CUDA init, warm-up)
+
+=== disk per model ===
+5.8M	smoke-pack/ckpt/cifar10-trainSize-12500-smoke-poison1-0.pth.tar
+2.0M	total
+
+== PACK SMOKE TEST DONE in 438 s

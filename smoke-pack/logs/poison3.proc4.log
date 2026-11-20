@@ -1,0 +1,33 @@
+| Preparing CIFAR-10 dataset...
+Files already downloaded and verified
+Files already downloaded and verified
+	Current shadow model id  4
+first 20 shadow labels  tensor([6, 6, 8, 1, 9, 2, 9, 0, 3, 4, 6, 9, 1, 1, 8, 6, 7, 7, 5, 9])
+
+[Phase 2] : Model setup
+| Building net type [wideresnet282]...
+| Wide-Resnet 28x2
+    Total params: 1.47M
+
+[Phase 3] : Training model
+| Training Epochs = 3
+| Initial Learning Rate = 0.1
+| Model will be saved at ===> smoke-pack/ckpt/cifar10-trainSize-12500-smoke-poison3-4.pth.tar
+
+=> Training Epoch #0/3, LR=0.1000
+shadow ID 4 | Train Loss: 2.0142 Train Acc@1: 27.094%
+		| Validation Epoch #0			Test Loss: 1.7181 Test Acc@1: 33.96%
+		 ===> | Saving model at smoke-pack/ckpt/cifar10-trainSize-12500-smoke-poison3-4.pth.tar
+| Elapsed time : 0 hr, 00 min, 30 sec
+
+=> Training Epoch #1/3, LR=0.1000
+shadow ID 4 | Train Loss: 1.9929 Train Acc@1: 39.572%
+		| Validation Epoch #1			Test Loss: 1.7651 Test Acc@1: 38.71%
+		 ===> | Saving model at smoke-pack/ckpt/cifar10-trainSize-12500-smoke-poison3-4.pth.tar
+| Elapsed time : 0 hr, 00 min, 56 sec
+
+=> Training Epoch #2/3, LR=0.1000
+shadow ID 4 | Train Loss: 1.9434 Train Acc@1: 45.636%
+		| Validation Epoch #2			Test Loss: 1.7187 Test Acc@1: 43.26%
+		 ===> | Saving model at smoke-pack/ckpt/cifar10-trainSize-12500-smoke-poison3-4.pth.tar
+| Elapsed time : 0 hr, 01 min, 22 sec
