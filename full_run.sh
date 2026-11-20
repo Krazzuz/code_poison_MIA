@@ -9,11 +9,11 @@
 #
 #SBATCH --job-name=mia-full
 #SBATCH --partition=a100
-#SBATCH --qos=a100-30min  #todo
+#SBATCH --qos=a100-6hours
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=10
 #SBATCH --mem=16G
-#SBATCH --time=00:20:00   #todo
+#SBATCH --time=03:00:00
 #SBATCH --output=logs_full_run/task-%A_%a.out
 #SBATCH --error=logs_full_run/task-%A_%a.err
 
@@ -34,10 +34,10 @@ TASK=${SLURM_ARRAY_TASK_ID:?"submit as a job array, e.g. sbatch --array=0-8%3 fu
 NET=wideresnet282
 DATASET=cifar10
 TRAIN_SIZE=12500
-EPOCHS=3 #200
+EPOCHS=200
 TOTAL_MODELS=128
 SYN="--synthetic_mean 0. --synthetic_stdev 0.1"
-OUT=results_test #results_full_run
+OUT=results_full_run
 LOGS=$OUT/logs
 mkdir -p "$LOGS" "$OUT/targets"
 
@@ -58,7 +58,7 @@ pip freeze > "$LOGS/pip-freeze-$SLURM_JOB_ID.txt"
 
 # GPU monitor (every 10 s)
 ( while true; do
-    echo "$(date +%s),$(nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv,noheader,nounits)"
+    echo "$(date +%s),$(nvidia-smi --query-gpu=utilization.gpu,memory.used,power.draw --format=csv,noheader,nounits)"
     sleep 10
   done ) > "$LOGS/task-$TASK.gpu.csv" &
 MON_PID=$!
